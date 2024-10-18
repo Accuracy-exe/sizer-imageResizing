@@ -1,10 +1,12 @@
 .App {
   text-align: center;
+  padding: 1rem; /* General padding */
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  transition: transform 0.3s ease; /* Smooth scaling on hover */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -22,10 +24,17 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 1rem; /* General padding */
 }
 
 .App-link {
   color: #61dafb;
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.App-link:hover {
+  color: #21a1f1; /* Change color on hover */
 }
 
 @keyframes App-logo-spin {
@@ -37,8 +46,96 @@
   }
 }
 
+/* Responsive Styles for Devices */
+@media (max-width: 1200px) { /* Large Tablets */
+  .App-header {
+    min-height: 80vh; /* Slightly less height for large tablets */
+    padding: 2rem; /* Increased padding */
+  }
+
+  .App-logo {
+    height: 35vmin; /* Smaller logo */
+  }
+
+  .App {
+    font-size: calc(9px + 2vmin); /* Reduce font size */
+  }
+}
+
+@media (max-width: 992px) { /* Tablets */
+  .App-header {
+    flex-direction: column; /* Ensure elements stack on tablets */
+  }
+
+  .App-logo {
+    height: 30vmin; /* Smaller logo */
+  }
+
+  .App {
+    font-size: calc(8px + 2vmin); /* Further reduce font size */
+  }
+}
+
+@media (max-width: 768px) { /* Landscape Mobile */
+  .App-header {
+    min-height: 70vh; /* Less height for landscape mobile */
+    padding: 2rem; /* More padding */
+  }
+
+  .App-logo {
+    height: 25vmin; /* Smaller logo */
+  }
+
+  .App {
+    font-size: calc(7px + 2vmin); /* Reduce font size */
+  }
+}
+
+@media (max-width: 576px) { /* Portrait Mobile */
+  .App-header {
+    min-height: 60vh; /* Minimal height for portrait mobile */
+    padding: 1.5rem; /* Adjust padding */
+  }
+
+  .App-logo {
+    height: 20vmin; /* Even smaller logo */
+  }
+
+  .App {
+    font-size: calc(6px + 2vmin); /* Further reduce font size */
+  }
+
+  .dropped-image {
+    max-width: 100%; /* Ensure images fit within the screen */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 1rem; /* Space above the image */
+  }
+}
+
+@media (max-width: 360px) { /* Small Mobile */
+  .App-header {
+    min-height: 50vh; /* Very minimal height */
+    padding: 1rem; /* Minimal padding */
+  }
+
+  .App-logo {
+    height: 18vmin; /* Even smaller logo */
+  }
+
+  .App {
+    font-size: calc(5px + 2vmin); /* Smallest font size */
+  }
+
+  .App-link {
+    font-size: calc(4px + 1vmin); /* Smaller link text */
+  }
+
+  .dropped-image {
+    margin-top: 0.5rem; /* Less space for small screens */
+  }
+}
+
+/* Additional styles for the dropped image */
 .dropped-image {
-  width: auto;
-  height: auto; /* Allow image to adapt its height */
-  max-width: 100%; /* Optional: Set a maximum width if needed */
+  margin-top: 1rem; /* Space between logo and dropped image */
 }
